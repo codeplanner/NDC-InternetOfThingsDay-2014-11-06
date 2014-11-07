@@ -1,0 +1,12 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\NDCIOT.Demo4-MissileControl.exe.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\NDCIOT.Demo4-MissileControl.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\NDCIOT.Demo4-MissileControl.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\HidLibrary.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\MissileSharp.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\Newtonsoft.Json.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\XSockets.Client40.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\HidLibrary.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\bin\Release\MissileSharp.xml
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\obj\Release\NDCIOT.Demo4-MissileControl.csprojResolveAssemblyReference.cache
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\obj\Release\NDCIOT.Demo4-MissileControl.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-MissileControl\obj\Release\NDCIOT.Demo4-MissileControl.pdb

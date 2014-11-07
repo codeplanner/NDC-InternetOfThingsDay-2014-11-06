@@ -1,0 +1,8 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\bin\Release\NDCIOT.Demo1-Client.exe.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\bin\Release\NDCIOT.Demo1-Client.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\bin\Release\NDCIOT.Demo1-Client.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\bin\Release\Newtonsoft.Json.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\bin\Release\XSockets.Client40.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\obj\Release\NDCIOT.Demo1-Client.csprojResolveAssemblyReference.cache
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\obj\Release\NDCIOT.Demo1-Client.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo1-Client\obj\Release\NDCIOT.Demo1-Client.pdb

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NDC - Demo 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link href="styles/vendor/wijmo.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/app.css" />
+
+    <!-- jQuery and Bootstrap scripts -->
+    <script src="scripts/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.gauge.min.js" type="text/javascript"></script>
+    
+    <!-- XSockets -->
+    <script src="scripts/XSockets.latest.min.js"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>
+                <img src="resources/wijmo5.png" />
+                Wijmo Graphs
+            </h1>
+            <p>
+                Arduino distance sensor full-duplex communication.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Arduino Threshold <small>Arduino will only send data lower than this value</small></h4>
+                <div id="arduinoGauge" class="custom-gauge1"></div>
+                <h4>My Threshold <small>I will only receive data lower than this value</small></h4>
+                <div id="clientGauge" class="custom-gauge2"></div>
+                <h4>Arduino Value <small>The sensor value [read-only]</small></h4>
+                <div id="sensorGauge" class="custom-gauge3"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 ">
+              <p class="pull-right" style="font-family: Tahoma; font-size: 1.2em; color:#80044d;margin:20px; font-style: italic">[Powered by XSockets.NET]</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/gauge.js" type="text/javascript"></script>
+    <script src="scripts/properties.js" type="text/javascript"></script>     
+    
+    <script type="text/javascript">
+        
+        
+        // ### GAUGES
+        var arduinoGauge = new Gauge('#arduinoGauge', props, onArduinoThresholdChanged);
+        var clientGauge = new Gauge('#clientGauge', props, onClientThresholdChanged);
+        //Change flag since sensor is realonly
+        props.isReadOnly = true;
+        var sensorGauge = new Gauge('#sensorGauge', props, function (d) { });
+
+        // ### CONNECTION/EVENTS/CALLBACKS
+
+        // ### XSOCKET
+        var conn = new XSockets.WebSocket('ws://127.0.0.1:4502', ['monitor']);
+        var controller = conn.controller('monitor');
+
+        // When the user changes to hardware setting/threshold
+        function onArduinoThresholdChanged(sender) {
+            if (arduinoGauge.gauge.cascadeChanges) {
+                controller.invoke('SetThreshold', { Hardware: 'Arduino', Threshold: sender.value });
+            }
+        }
+
+        // When the user change the individual threshold
+        function onClientThresholdChanged(sender) {
+            controller.setProperty('Threshold', sender.value);
+        }
+
+        // Notification about arduino threshold changed (by someone)
+        controller.on('thresholdarduino', function (d) {
+            //Use flag to not send useless data
+            arduinoGauge.gauge.cascadeChanges = false;
+            arduinoGauge.gauge.value = parseInt(d);            
+            arduinoGauge.gauge.cascadeChanges = true;
+        });
+
+        // The hardware sensor sent a new value
+        controller.on('changearduino', function (d) {
+            sensorGauge.gauge.value = parseInt(d);
+        });
+
+    </script>
+</body>
+</html>

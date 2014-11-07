@@ -1,0 +1,12 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\NDCIOT.Demo3-XboxController.exe.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\NDCIOT.Demo3-XboxController.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\NDCIOT.Demo3-XboxController.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\Newtonsoft.Json.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\SharpDX.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\SharpDX.XInput.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\XSockets.Client40.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\SharpDX.xml
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\bin\Release\SharpDX.XInput.xml
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\obj\Release\NDCIOT.Demo3-XboxController.csprojResolveAssemblyReference.cache
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\obj\Release\NDCIOT.Demo3-XboxController.exe
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo3-XboxController\obj\Release\NDCIOT.Demo3-XboxController.pdb

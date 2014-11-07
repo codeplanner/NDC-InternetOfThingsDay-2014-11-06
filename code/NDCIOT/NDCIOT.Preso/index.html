@@ -1,0 +1,327 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Go real-time with "The Internet Of Things"</title>
+
+    <meta name="description" content="Internet Of Things - XSockets.NET">
+    <meta name="author" content="Uffe Bjorklund">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="revealjs/css/reveal.min.css">
+    <link rel="stylesheet" href="revealjs/css/theme/default.css" id="theme">
+    <!--<link href="revealjs/css/print/pdf.css" rel="stylesheet" />-->
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+     <!--<script>
+         document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+         </script>-->
+    <!--[if lt IE 9]>
+        <script src="revealjs/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+        #conferenceLogo {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 100000;
+            width: 141px;
+            height: 49px;
+        }
+
+        #ndc {
+            position: fixed;
+            right: 80px;
+            top: 20px;
+            z-index: 100000;
+            width: 141px;
+            height: 49px;
+            font-size: 3.9em;
+            color: red;
+            font-family: tahoma;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="conferenceLogo">
+        <img src="img/xsocketslogo.PNG" width="205" height="85" />
+    </div>
+    <div id="ndc">
+        <img src="img/ndceventlogo.gif" width="174" height="97" />
+    </div>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2>
+                    Go real-time&nbsp;<span style="font-size: 75.96px;">with&nbsp;</span>
+                </h2>
+                <h2>
+                    <span style="font-size: 75.96px;">"Internet of Things"</span>
+                </h2>
+                <div>
+                    <img src="img/xsockets-space.PNG" style="width: 292.12736270329754px; height: 144.3872549393598px; max-height: none; max-width: none;">
+                </div>
+                <div>
+                    RealTime communication and IoT walks hand in hand
+                </div>
+                <p style="text-align: center; padding-top: 15px;">
+                    <font style="font-size: 24px;">Uffe Bjorklund - @ulfbjo</font>
+                </p>
+            </section>
+            <section>
+                <h2>About Me</h2>
+                <div>
+                    <ul>
+                        <li class="fragment" data-fragment-index="0">
+                            In RealTimeWeb since 2009.
+                            <ul>
+                                <li style="font-style: italic;color:gray;">Web (mostly backend, and you will see why)</li>                                
+                                <li style="font-style: italic;color:gray;">Kinect, Arduino, Netduino, RaspberryPI, AR Drone etc</li>                                                                
+                                <li style="font-style: italic;color:gray;">P2P (like WebRTC)</li>
+                                <li style="font-style: italic;color:gray;">M2M</li>
+                                <li style="font-style: italic;color:gray;">...Full-Duplex communication in general...</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Todays agenda</h2>
+                <div>
+                    <ul>
+                        <li class="fragment" data-fragment-index="0">Intro to "realtime" development</li>
+                        <li class="fragment" data-fragment-index="1">Show that state is important</li>
+                        <li class="fragment" data-fragment-index="2">Communicate cross-protocol</li>
+                        <li class="fragment" data-fragment-index="3">Add "things" to the mix</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>HTTP/REST/AJAX</h2>
+                <div>
+                    <ul>
+                        <li>Designed for delivering resources (HTML, JS, CSS)</li>
+                        <li>Half-Duplex (stateless)</li>
+                        <li>~870 bytes average header</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Why is "RealTime" important</h2>
+                <div>
+                    <ul>
+                        <li class="fragment" data-fragment-index="0">
+                            Well...
+                            <ul>
+                                <li style="font-style: italic;color:gray;">Event driven architecture</li>
+                                <li style="font-style: italic;color:gray;">Should decrease complexity</li>
+                                <li style="font-style: italic;color:gray;">Will increase speed</li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="1">
+                            But...
+                            <ul>
+                                <li style="font-style: italic;color:gray;">A client should never (or rarely) ask for data</li>
+                                <li style="font-style: italic;color:gray;">You should never send data to a client that does not need it</li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="2">
+                            So...
+                            <ul>
+                                <li style="font-style: italic;color:gray;">Simple</li>
+                                <li style="font-style: italic;color:gray;">Fast</li>
+                                <li style="font-style: italic;color:gray;">Saves resources</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>RealTime Frameworks</h2>
+                <div>
+                    <ul>
+                        <li>NodeJS/Socket.io</li>
+                        <li>XSockets.NET</li>
+                        <li>SignalR</li>
+                        <li>Pusher *</li>
+                        <li>Fleck</li>
+                        <li>Realtime.co *</li>
+                        <li>PubNub *</li>
+                        <li>Tornado</li>
+                        <li>Kaazing **</li>
+                        <li>Firebase *</li>
+                        <li>Autobahn</li>
+                    </ul>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>* SaaS</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ** SaaS  and SelfHosted
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Communication Patterns</h2>
+                <div>
+                    <img src="img/rtc-communication-patterns.png" style="width: 600px; height: 600px; max-height: none; max-width: none;" />
+                </div>
+            </section>
+            <section>
+                <h2>Framework Capabilities</h2>
+                <div>
+                    <p style="color:red;">
+                        The most imporant parts (IMO) of a "real-time" framework?
+                    </p>
+                    <ul>
+                        <li class="fragment" data-fragment-index="0">
+                            Modular architecture
+                            <ul>
+                                <li style="font-style: italic;color:gray;">So that functionality can be overriden/added in a smooth way</li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="1">
+                            State
+                            <ul>
+                                <li style="font-style: italic;color:gray;">So that we get control over where messages are sent</li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="2">
+                            Cross-Protocol Communication
+                            <ul>
+                                <li style="font-style: italic; color:gray">So that we can connect things/systems regardles of protocol</li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="3">
+                            But also...
+                            <ul>
+                                <li style="font-style: italic; color:gray">Scaling</li>
+                                <li style="font-style: italic; color:gray">Security</li>
+                                <li style="font-style: italic; color:gray">Etc...</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>  
+            <section>
+                <h2>How it works... kind of...</h2>
+                <div>
+                    <img src="img/xsocketscommunication.png" style="width: 600px; height: 600px; max-height: none; max-width: none;" />
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h2 style="font-style: normal; font-variant: normal;">&lt;CODE/&gt;</h2>
+                    <div>Code availbale at: https://github.com/codeplanner/NDC-InternetOfThingsDay-2014-11-06</div>
+                </div>
+            </section>
+            <section>
+                <h2>Why should I care about IoT?</h2>
+                <div>
+                    <img src="img/intel-info.PNG" style="width: 600px; height: 340px; max-height: none; max-width: none;"><br />
+                    Today there is ~300.000 developers in IoT. By 2020 that number is expected ot be ~4.500.000.<br />
+                    An annual growth by 57 %
+                </div>
+            </section>
+            <section>
+                <h2>Thank You!</h2>
+                <h4>Questions?</h4>
+                <p></p>
+                <p></p>
+                <h3>Uffe Bjorklund</h3>
+                <h5>email: uffe@xsockets.net</h5>
+                <h5>twitter: @ulfbjo</h5>
+            </section>
+            <section>
+                <h2>Sources/Credits</h2>
+                <div>
+                    <a style="color: cornflowerblue" href="http://www.intel.com/content/www/us/en/intelligent-systems/iot/internet-of-things-infographic.html">IoT statistics 1: Intel</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://readwrite.com/2014/06/27/internet-of-things-developers-jobs-opportunity">IoT statistics 2: ReadWrite.com</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://www.leggetter.co.uk/">Image of "Communication Patterns" by Phil Leggetter</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://wijmo.com">Graphs by Wijmo</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://www.html5quintus.com/">Game by html5quintus</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://xsockets.net">Code samples by XSockets.NET</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://www.nuget.org/packages/MissileSharp">MissileSharp by Christian Specht</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://www.nuget.org/packages/SharpDX">SharpDX by Alexandre Mutel</a>
+                </div>
+                <div>
+                    <a style="color: cornflowerblue" href="http://hakim.se">RevealJS by Hakim El Hattab</a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="revealjs/lib/js/head.min.js"></script>
+    <script src="revealjs/js/reveal.min.js"></script>
+    <script src="revealjs/js/jquery-1.8.2.min.js"></script>
+
+    <script>
+
+        //Setup reveal remote
+        $(function () {
+
+        });
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: 'simple',//Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '/revealjs/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: '/revealjs/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '/revealjs/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
+
+            ]
+        });
+        //{ src: '/revealjs/plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+        //{ src: '/revealjs/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        //{ src: '/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } }
+    </script>
+
+</body>
+</html>

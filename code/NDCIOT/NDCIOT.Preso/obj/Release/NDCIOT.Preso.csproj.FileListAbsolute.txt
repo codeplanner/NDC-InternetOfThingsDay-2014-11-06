@@ -1,0 +1,5 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Preso\bin\NDCIOT.Preso.dll.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Preso\bin\NDCIOT.Preso.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Preso\bin\NDCIOT.Preso.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Preso\obj\Release\NDCIOT.Preso.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Preso\obj\Release\NDCIOT.Preso.pdb

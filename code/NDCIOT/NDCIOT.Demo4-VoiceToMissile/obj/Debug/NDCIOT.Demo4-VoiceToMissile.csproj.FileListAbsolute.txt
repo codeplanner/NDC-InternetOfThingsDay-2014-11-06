@@ -1,0 +1,6 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\bin\NDCIOT.Demo4-VoiceToMissile.dll.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\bin\NDCIOT.Demo4-VoiceToMissile.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\bin\NDCIOT.Demo4-VoiceToMissile.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\obj\Debug\NDCIOT.Demo4-VoiceToMissile.csprojResolveAssemblyReference.cache
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\obj\Debug\NDCIOT.Demo4-VoiceToMissile.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo4-VoiceToMissile\obj\Debug\NDCIOT.Demo4-VoiceToMissile.pdb

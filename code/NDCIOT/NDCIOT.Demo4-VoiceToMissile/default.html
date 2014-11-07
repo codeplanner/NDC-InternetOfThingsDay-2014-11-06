@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    
+    <link href="missile.css" rel="stylesheet" />
+
+    <!-- BOOTSTRAP //-->
+    <!-- Latest compiled and minified CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Optional theme -->
+    <link href="/resources/css/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+    <body>               
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <h4 class="text-center">
+                        Missile Launcher <small>press & hold the buttons to aim & fire</small>
+                    </h4>
+                    <p class="text-center">
+                        Or.. use the <button id="btn-action" class="btn-default btn-sm" style="display: none">speech recognition</button> option 
+                    </p>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div style="margin: 1em">
+                        <div class="cmd right" data-cmd="right"></div>
+                        <div class="cmd left" data-cmd="left"></div>
+                        <div class="cmd up" data-cmd="up"></div>
+                        <div class="cmd down" data-cmd="down"></div>
+                        <div class="cmd fire" data-cmd="fire"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <span class="badge" id="cmd">{}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="Scripts/jquery-2.1.1.min.js"></script>
+        <script src="Scripts/XSockets.latest.min.js"></script>
+        <script src="missile.js"></script>        
+    </body>
+</html>

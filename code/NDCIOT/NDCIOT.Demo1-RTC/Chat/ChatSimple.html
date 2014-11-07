@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NDC - Demo1</title>
+</head>
+<body>
+    <input type="text" id="message" value="Hello RealTime" /><button id="send">send</button>
+
+    <div data-bind="foreach:messages">
+        <p data-bind="text:$data"></p>
+    </div>
+
+    <script src="/Scripts/XSockets.latest.js"></script>
+    <script src="/Scripts/knockout-3.2.0.js"></script>
+    <script src="/Scripts/jquery-2.1.1.js"></script>
+
+    <script>
+        //Knockoutjs
+        var vm = { messages: ko.observableArray([]) };
+        ko.applyBindings(vm);
+
+        //Connection
+        var conn = new XSockets.WebSocket('ws://localhost:4502', ['chatsimple']);
+        var chat = conn.controller('chatsimple');
+
+        //RPC
+        chat.on('sometopic', function (d) {
+            vm.messages.unshift(d);
+        });
+
+        //Events
+        $('#send').click(function (e) {
+            var message = $('#message').val();
+            chat.invoke('sometopic', message);
+        });
+    </script>
+
+</body>
+</html>

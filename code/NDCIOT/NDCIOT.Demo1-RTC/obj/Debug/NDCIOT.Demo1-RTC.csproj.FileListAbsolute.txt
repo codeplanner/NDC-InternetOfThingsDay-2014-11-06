@@ -1,0 +1,5 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\Demo1-RTC\bin\NDCIOT.Demo1-RTC.dll.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\Demo1-RTC\bin\NDCIOT.Demo1-RTC.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\Demo1-RTC\bin\NDCIOT.Demo1-RTC.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\Demo1-RTC\obj\Debug\NDCIOT.Demo1-RTC.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\Demo1-RTC\obj\Debug\NDCIOT.Demo1-RTC.pdb

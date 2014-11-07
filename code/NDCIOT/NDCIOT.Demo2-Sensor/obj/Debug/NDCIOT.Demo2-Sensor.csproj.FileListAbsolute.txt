@@ -1,0 +1,6 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\bin\NDCIOT.Demo2-Sensor.dll.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\bin\NDCIOT.Demo2-Sensor.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\bin\NDCIOT.Demo2-Sensor.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\obj\Debug\NDCIOT.Demo2-Sensor.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\obj\Debug\NDCIOT.Demo2-Sensor.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.Demo2-Sensor\obj\Debug\NDCIOT.Demo2-Sensor.csprojResolveAssemblyReference.cache

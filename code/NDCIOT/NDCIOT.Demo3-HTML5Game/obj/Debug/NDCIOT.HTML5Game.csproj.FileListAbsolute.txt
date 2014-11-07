@@ -1,0 +1,6 @@
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\bin\NDCIOT.HTML5Game.dll.config
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\bin\NDCIOT.HTML5Game.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\bin\NDCIOT.HTML5Game.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\obj\Debug\NDCIOT.HTML5Game.dll
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\obj\Debug\NDCIOT.HTML5Game.pdb
+C:\Users\Uffe\Dropbox\Conferences\2014\NDCIOT\NDCIOT.HTML5Game\obj\Debug\NDCIOT.HTML5Game.csprojResolveAssemblyReference.cache

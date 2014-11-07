@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NDC - Demo1</title>
+</head>
+<body>
+    <select id="color">
+        <option value="Red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+    </select>
+    <br />
+    <input type="text" id="message" value="Hello RealTime" />
+    <button id="send">send</button>
+
+    <div data-bind="foreach:messages">
+        <p data-bind="text:$data"></p>
+    </div>
+
+    <script src="/Scripts/XSockets.latest.js"></script>
+    <script src="/Scripts/knockout-3.2.0.js"></script>
+    <script src="/Scripts/jquery-2.1.1.js"></script>
+
+    <script>
+        //Knockoutjs
+        var vm = { messages: ko.observableArray([]) };
+        ko.applyBindings(vm);
+
+        //Connection
+        var conn = new XSockets.WebSocket('ws://localhost:4502', ['chatstate']);
+        var chat = conn.controller('chatstate');
+
+        //RPC
+        chat.sometopic = function (d) {
+            vm.messages.unshift(d);
+        };
+
+        //Events
+        $('#send').click(function (e) {
+            var message = $('#message').val();
+            chat.invoke('sometopic', message);
+        });
+
+        $('#color').on('change', function () {
+            chat.setEnum('color', $(this).val());
+        });
+    </script>
+
+</body>
+</html>
